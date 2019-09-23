@@ -30,9 +30,10 @@ install_deps () {
     sudo apt upgrade --yes
     sudo apt install --yes \
       software-properties-common \
-      git
-    sudo apt-add-repository --yes --update ppa:ansible/ansible
-    sudo apt install --yes ansible
+      git \
+      pip3
+#    sudo apt-add-repository --yes --update ppa:ansible/ansible
+#    sudo apt install --yes ansible
   fi
 }
 

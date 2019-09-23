@@ -2,8 +2,10 @@
 
 > Ansible playbook installer
 
+This branch provides support of Python 3.
+
 ```bash
-bash -c "$(wget -O- https://raw.githubusercontent.com/shimarulin/apl/master/install.sh)"
+bash -c "$(wget -O- https://raw.githubusercontent.com/shimarulin/apl/python3/install.sh)"
 ```
 
 You can setup installer via environment variables:
@@ -15,5 +17,5 @@ You can setup installer via environment variables:
 For example:
 
 ```bash
-APL_INSTALL_DIR="$HOME/.opt/apl" bash -c "$(wget -O- https://raw.githubusercontent.com/shimarulin/apl/master/install.sh)"
+APL_INSTALL_DIR="$HOME/.opt/apl" bash -c "$(wget -O- https://raw.githubusercontent.com/shimarulin/apl/python3/install.sh)"
 ```
