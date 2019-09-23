@@ -32,7 +32,8 @@ install_deps () {
       software-properties-common \
       git \
       python3-pip
-    sudo pip3 install ansible
+#    sudo pip3 install ansible
+    pip install --user ansible
   fi
 }
 
