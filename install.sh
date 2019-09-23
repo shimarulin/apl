@@ -33,7 +33,7 @@ install_deps () {
       git \
       python3-pip
 #    sudo pip3 install ansible
-    pip install --user ansible
+    pip3 install --user ansible
   fi
 }
 
