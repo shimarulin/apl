@@ -2,10 +2,18 @@
 
 > Ansible playbook installer
 
-This branch provides support of Python 3.
-
 ```bash
-bash -c "$(wget -O- https://raw.githubusercontent.com/shimarulin/apl/python3/install.sh)"
+bash -c "$(wget -O- https://raw.githubusercontent.com/shimarulin/apl/master/install.sh)"
+```
+
+Usages:
+
+```
+Simple installation script for Ansible and Ansible Playbook to setup you own workstation
+Usage: ./install.sh [-p|--package-manager <arg>] [-l|--(no-)local] [-h|--help]
+        -p, --package-manager: Select the package manager for install Ansible: 'apt' or 'pip' (default: 'apt')
+        -l, --local, --no-local: Local installation of Ansible, only for pip package manager (off by default)
+        -h, --help: Prints help
 ```
 
 You can setup installer via environment variables:
@@ -17,5 +25,19 @@ You can setup installer via environment variables:
 For example:
 
 ```bash
-APL_INSTALL_DIR="$HOME/.opt/apl" bash -c "$(wget -O- https://raw.githubusercontent.com/shimarulin/apl/python3/install.sh)"
+APL_INSTALL_DIR="$HOME/.opt/apl" bash -c "$(wget -O- https://raw.githubusercontent.com/shimarulin/apl/master/install.sh)"
+```
+
+## Development
+
+To generate command line arguments parser you need to have installed [argbash](https://argbash.io/). Quick steps to get it:
+
+- Get latest source from https://github.com/matejak/argbash/releases
+- open `resources` directory in terminal
+- run `make install PREFIX=$HOME/.local`
+
+Generate script:
+
+```bash
+argbash -o install.sh install.m4
 ```

@@ -122,27 +122,20 @@ install_deps () {
   if [[ $(command -v ansible) == '' ]]; then
     echo "${BLUE}Install dependencies...${RESET}"
 
-    sudo apt update
-    sudo apt upgrade --yes
-
     if [[ ${_arg_package_manager} = pip ]]; then
-      sudo apt install --yes \
-        git \
-        python3-pip
+      echo "Install pip"
     elif [[ ${_arg_package_manager} = apt ]]; then
-      sudo apt-add-repository --yes --update ppa:ansible/ansible
-      sudo apt install --yes \
-        git
+      echo "apt-add-repository"
     else
       _PRINT_HELP=yes die "FATAL ERROR: Got an unexpected value of the 'package-manager' argument: '$_arg_package_manager'" 1
     fi
 
     if [[ ${_arg_package_manager} = pip && ${_arg_local} = on ]]; then
-      pip3 install --user ansible
+      echo "Install local ansible via pip"
     elif [[ ${_arg_package_manager} = pip && ${_arg_local} = off ]]; then
-      sudo pip3 install ansible
+      echo "Install global ansible via pip"
     else
-      sudo apt install --yes ansible
+      echo "Install global ansible via apt"
     fi
 
   fi
@@ -161,7 +154,7 @@ main() {
   setup_color
 
   install_deps
-  install_apl
+#  install_apl
 
   printf "$GREEN"
   printf "$BOLD"
