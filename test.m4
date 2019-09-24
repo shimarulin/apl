@@ -33,7 +33,7 @@ setup_color() {
 }
 
 install_deps () {
-  if [[ $(command -v ansible) == '' ]]; then
+  if [[ $(command -v ttttt) == '' ]]; then
     echo "${BLUE}Install dependencies...${RESET}"
 
     if [[ ${_arg_package_manager} = pip ]]; then
