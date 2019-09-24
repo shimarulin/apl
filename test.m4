@@ -72,8 +72,6 @@ main() {
 
   printf "$GREEN"
   printf "$BOLD"
-  printf "$GREEN"
-  printf "$BOLD"
   cat <<EOF
 
         ___    ____  __
