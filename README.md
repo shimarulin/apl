@@ -3,17 +3,27 @@
 > Ansible playbook installer
 
 ```bash
-bash -c "$(wget -O- https://raw.githubusercontent.com/shimarulin/apl/master/install.sh)"
+bash <(wget -qO- https://raw.githubusercontent.com/shimarulin/apl/master/install.sh)
 ```
 
 Usages:
 
 ```
 Simple installation script for Ansible and Ansible Playbook to setup you own workstation
-Usage: ./install.sh [-p|--package-manager <arg>] [-l|--(no-)local] [-h|--help]
+Usage: bash <(wget -qO- https://raw.githubusercontent.com/shimarulin/apl/master/install.sh) [-p|--package-manager <arg>] [-l|--(no-)local] [-h|--help]
         -p, --package-manager: Select the package manager for install Ansible: 'apt' or 'pip' (default: 'apt')
         -l, --local, --no-local: Local installation of Ansible, only for pip package manager (off by default)
         -h, --help: Prints help
+```
+
+Global Ansible installation via pip:
+```bash
+bash <(wget -qO- https://raw.githubusercontent.com/shimarulin/apl/master/install.sh) -p pip
+```
+
+Local Ansible installation via pip:
+```bash
+bash <(wget -qO- https://raw.githubusercontent.com/shimarulin/apl/master/install.sh) -p pip -l
 ```
 
 You can setup installer via environment variables:
