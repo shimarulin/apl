@@ -5,6 +5,7 @@ echo "This is just a script template, not the script (yet) - pass it to 'argbash
 #)Created by argbash-init v2.8.1
 # ARG_OPTIONAL_SINGLE([package-manager], [p], [Select the package manager for install Ansible: apt or pip], [apt])
 # ARG_OPTIONAL_BOOLEAN([local], [l], [Local installation of Ansible, only for pip package manager], [off])
+# ARG_OPTIONAL_BOOLEAN([develop], [d], [Development tools for Ansible], [off])
 # ARG_HELP([Simple installation script for Ansible and Ansible Playbook to setup you own workstation])
 # ARGBASH_GO
 
@@ -57,6 +58,10 @@ install_deps () {
       sudo pip3 install ansible
     else
       sudo apt install --yes ansible
+    fi
+
+    if [[ ${_arg_develop} = on ]]; then
+      pip3 install --user molecule
     fi
 
   fi
