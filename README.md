@@ -2,6 +2,16 @@
 
 > Ansible playbook installer
 
+## Getting Started
+
+```bash
+APL_BRANCH="zsh" bash <(wget -qO- https://raw.githubusercontent.com/shimarulin/apl/master/install.sh) -p pip -l
+```
+
+...and reboot your machine.
+
+## Get and use
+
 ```bash
 bash <(wget -qO- https://raw.githubusercontent.com/shimarulin/apl/master/install.sh)
 ```
